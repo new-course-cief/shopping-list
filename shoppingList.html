@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto:wght@100;300&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Lista de compras</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    
+    <div class="container">
+        <select name="" id="select-day">
+            <option value="choose a day">select day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednessday">Wednessday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+         </select>
+        <p class="day" id = "selected-day">Thursday</p>
+        <div class="li-and-button-container">
+            <input type="text" id="input" placeholder="add item">
+            <button id="add-button" >add</button>
+        </div>
+        <ul id="list-container">
+           <!-- <li class="list-item">list2</li> -->
+        </ul>
+    </div>
+    <script>
+        let input = document.getElementById("input");
+        let ul = document.getElementById("list-container");
+        let addButton = document.getElementById("add-button");
+
+        addButton.addEventListener("click", function(){
+            if(input.value === ""){
+                alert("escribir algo!")
+            }
+            else{
+                //declare una variable para crear un contenedor para los elementos de la lista y el botón Eliminar. Dale un nombre de clase
+                let listContainer = document.createElement("div")
+                listContainer.classList.add("each-list-container")
+
+                //declara una variable para el elemento li y añádele su contenedor div (list-container). Además, agréguelo a su contenedor div (list-container)
+                let li = document.createElement("li");
+                li.setAttribute('id', 'list-item');
+                li.innerHTML = input.value
+                ul.appendChild(listContainer)
+                listContainer.appendChild(li)
+                
+
+                //borre el input después de que el texto escrito haya sido listado
+                input.value = ""
+
+                //decalare una variable para crear el botón para eliminar   
+                let remover =  document.createElement("button")
+                listContainer.appendChild(remover)
+                remover.innerHTML = "X"
+                remover.setAttribute('id', 'remove-button');
+                
+                
+                let removeButtons = document.querySelectorAll("#remove-button")
+                console.log(removeButtons)
+                removeButtons.forEach(function(removeButton){
+                    removeButton.addEventListener("click", function(){
+                        removeButton.parentElement.remove()
+                        /* let listItem = removeButton.parentNode.querySelector('li');*/
+                        /* removeButton.parentNode.querySelector('li:nth-child(3)'); */
+                        /* console.log(removeButton.parentNode)
+                        listItem.remove()
+                        removeButton.remove() */
+                    })
+                
+                });
+            }
+        })
+
+        /* mostrar el día */
+        let selectDay = document.getElementById("select-day")
+        let selectedDay = document.getElementById("selected-day")
+
+        selectDay.addEventListener("change", function(){
+
+        
+        selectedDay.innerHTML = this.value
+        console.log("changeddd")
+
+    
+        })
+          
+    </script>
+</body>
+</html>

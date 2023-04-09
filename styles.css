@@ -1,0 +1,205 @@
+body{
+    /* background-color: #d47086; e0e0e0; #e21313; da6211 */
+    /* background-color:  #101820FF; */
+    background-image: url(images/shopping-cart-filled-with-coins-copy-space-background.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #101820FF ;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+.container{
+    padding: 240px 50px;
+    /* background-color: rgb(43, 42, 46); */
+    background-color: #9dd4d1; 
+   /*  #acbdbc; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    font-size: 18px;
+    margin: 15px;
+
+}
+h1{
+    color: grey;
+}
+.container .day{
+    font-size: 30px;
+    font-weight: 900;
+    color: grey;
+}
+
+#list-container{
+    list-style: none;
+    padding: 0;
+}
+.each-list-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 135px;
+    margin-top: 20px;
+    transition: 0.2s all ease-out;
+}
+.li-and-button-container{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#remove-button{
+  color: red;
+  font-weight: 900;
+  font-family: sans-serif;
+  padding: 10px 16px;
+}
+/* input */
+input {
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    background: #e8e8e8;   
+    transition: 0.3s;
+   }
+   
+   .input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+           inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+   }
+   
+  /*  button  */
+   button {
+
+    margin: 0;
+    padding: 14px 35px;
+    outline: none;
+    text-decoration: none;
+   
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+    border-radius: 10px;
+    color: #1d89ff;
+    font-weight: 800;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  button span {
+    color: #164ca7;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+  }
+  
+  button:hover {
+    animation: rotate624 0.7s ease-in-out both;
+  }
+  
+  button:hover span {
+    animation: storm1261 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+  
+  @keyframes rotate624 {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+  
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+  
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+  
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes storm1261 {
+    0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  
+    25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+  
+    50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+  
+    75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+  
+    100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  }
+  
+  .btn-shine {
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .btn-shine span {
+    z-index: 20;
+  }
+  
+  .btn-shine:after {
+    background: #38ef7d;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.4;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
+  
+  .btn-shine:hover:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  /* select */
+  
+select{
+    display: inline-block;
+    cursor: pointer;
+    padding: 7px 14px;
+    height: 42px;
+    outline: 0; 
+    border: 0;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #7b7b7b;
+    font-size: 0.8em;
+    color: #999;
+    border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
